@@ -1,12 +1,6 @@
 
 class Topology {
     /**
-     * private members of topology
-     */
-    #id;
-    #components
-
-    /**
      * constructor to initialize topology members
      * @param {String} _id 
      * @param {Object} _components 

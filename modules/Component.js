@@ -1,9 +1,5 @@
 class Component {
     /**
-     * private member properties of component   
-     */
-    #properties;
-    /**
      * constructor to initialize data of device 
      * @param {Object} _properties 
      */
@@ -42,7 +38,7 @@ class Component {
     print() {
         console.log(`\tcomponent --> ${this.properties.id}`);
         for (const key in this.properties) {
-            console.log(`\t ${key} : ${this.properties[key]}`);
+            console.log(`\t ${key} : ${JSON.stringify(this.properties[key] )}`);
         }
         console.log('\n \t------------------ \n');
     }
