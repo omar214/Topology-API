@@ -1,23 +1,22 @@
 {
-  "name": "topology-api",
-  "version": "1.0.0",
-  "description": "topology API library",
-  "main": "app.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/omar214/Topology-API.git"
-  },
-  "author": "omar mohamed",
-  "license": "ISC",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/omar214/Topology-API/issues"
-  },
-  "homepage": "https://github.com/omar214/Topology-API#readme"
+	"name": "topology-api",
+	"version": "1.0.0",
+	"description": "topology API library",
+	"main": "app.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/omar214/Topology-API.git"
+	},
+	"author": "omar mohamed",
+	"license": "ISC",
+	"type": "module",
+	"bugs": {
+		"url": "https://github.com/omar214/Topology-API/issues"
+	},
+	"homepage": "https://github.com/omar214/Topology-API#readme"
 }

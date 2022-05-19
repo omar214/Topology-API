@@ -21,15 +21,15 @@ class API {
             let rawdata = fs.readFileSync(fileName);
             result = JSON.parse(rawdata);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             result = null;
         }
         if (result === null) {
-            console.log(`error reading file`);
+            //console.log(`error reading file with name"${fileName}"`);
         } else {
             let topology = this.getTopologyById(result.id)
             if (topology !== null) {
-                console.log(`${fileName} is already in memory cant read it again`);
+                //console.log(`${fileName} is already in memory cant read it again`);
                 return result;
             }
             let topologyID = result.id
@@ -53,13 +53,13 @@ class API {
     async writeFile(_id) {
         let topology = this.getTopologyById(_id)
         if (topology === null) {
-            console.log(`error writing file id = ${_id} is not in memort`);
+            // console.log(`error writing file id = ${_id} is not in memort`);
             return false;
         }
         const jsonString = JSON.stringify(topology);
         fs.writeFile((`./output/${topology.id}.json`), jsonString, err => {
             if (err) {
-                console.log('Error writing file', err)
+                //console.log('Error writing file', err)
                 return false;
             } else {
                 // console.log('Successfully wrote file')
@@ -74,7 +74,7 @@ class API {
      */
     async queryTopologies() {
         if (this.memory.length === 0) {
-            console.log(`no topologies in memory right now`);
+            //console.log(`no topologies in memory right now`);
             return [];
         } else {
             return this.memory;
@@ -88,7 +88,7 @@ class API {
     async deleteTopology(topologyID) {
         let topology = this.getTopologyById(topologyID);
         if (topology === null) {
-            console.log(`error deleting file no such id =${topologyID} in memory`);
+            //console.log(`error deleting file no such id =${topologyID} in memory`);
             return false;
         } else {
             this.memory = this.memory.filter((ele) => {
@@ -106,7 +106,7 @@ class API {
     async queryDevices(topologyID) {
         let topology = this.getTopologyById(topologyID);
         if (topology === null) {
-            console.log(`error query devices id= ${topologyID} is not in memory`);
+            //console.log(`error query devices id= ${topologyID} is not in memory`);
             return [];
         } else {
             // console.log('query devices done succefully');
@@ -125,7 +125,7 @@ class API {
         let result = [];
         let topology = this.getTopologyById(topologyID);
         if (topology === null) {
-            console.log(`error in query devices with net list ${topologyID} is not in memory`);
+            //console.log(`error in query devices with net list ${topologyID} is not in memory`);
             return false;
         }
         let deviceList = topology.components
@@ -135,7 +135,7 @@ class API {
             }
         }
         if (result === []) {
-            console.log(`no device connected to node ${NetlistNodeID}`);
+            //console.log(`no device connected to node ${NetlistNodeID}`);
         } else {
             // console.log(`query device list done successfully`);
         }
