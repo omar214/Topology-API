@@ -1,5 +1,5 @@
 import API from '../modules/API.js'
-
+console.time();
 // function for debuggind
 function printObj(obj) {
     console.log(JSON.stringify(obj));
@@ -162,6 +162,7 @@ await testQueryDevices();
 await test_writeJSON();
 await test_queryDevicesWithNetlistNode();
 await test_deleteTopology();
+console.timeEnd();
 
 console.log(testSuccesseded + " test cases successeded out of " + (testSuccesseded + testFailed));
 console.assert(testFailed == 0, testFailed + " test cases has FAILED!!! ");
